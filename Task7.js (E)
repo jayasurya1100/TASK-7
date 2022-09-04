@@ -1,0 +1,25 @@
+// E. The country which uses US Dollars as currency:
+
+const country4=new XMLHttpRequest();
+country4.open("GET","https://restcountries.com/v3.1/all");
+country4.send();
+
+country4.responseType="json";
+country4.onload=function dry(){
+const uS=country4.response;
+console.log("The country which uses US Dollars as currency:")
+
+for(i in uS){
+    var dollars=uS[i].currencies;
+    for(j in dollars){
+
+
+if (dollars[j].name == "United States dollar"){
+
+    console.log("Country name:",uS[i].name.common,"US Dollars:",dollars[j].name) 
+}
+
+    }
+  
+}
+};
