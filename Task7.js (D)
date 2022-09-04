@@ -1,0 +1,16 @@
+// D. The total population of countries using reduce function:
+
+const country3=new XMLHttpRequest();
+country3.open("GET","https://restcountries.com/v3.1/all");
+country3.send();
+
+country3.responseType="json";
+country3.onload=function dry( ){
+const reduce_fun=country3.response;
+console.log(" the total population of countries:")
+reduce_fun.reduce((g,p)=>{
+   g=p;
+console.log("Total population",p.population)
+})
+
+};
