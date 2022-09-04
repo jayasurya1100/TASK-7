@@ -1,0 +1,19 @@
+// B. All the countries with a population of less than 2 lakhs using Filter function:
+
+const country1=new XMLHttpRequest();
+country1.open("GET","https://restcountries.com/v3.1/all");
+country1.send();
+
+country1.responseType="json";
+country1.onload=function dry( ){
+const popu=country1.response;
+console.log("All the countries with a population of less than 1 lakhs:")
+popu.filter((n)=>{
+if(n.population<1_00_000){
+   
+    console.log(n.name.common,n.population)
+
+}
+}
+)
+};
