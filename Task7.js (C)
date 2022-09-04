@@ -1,0 +1,13 @@
+// C. The following details name, capital, flag using forEach function:
+const country2=new XMLHttpRequest();
+country2.open("GET","https://restcountries.com/v3.1/all");
+country2.send();
+
+country2.responseType="json";
+country2.onload=function dry(){
+const capitals=country2.response;
+console.log("The following details name, capital, flag:")
+capitals.forEach(function (j){
+console.log("Name of country:",j.name.common,"Capital:",j.capital,"Flag:",j.flag)
+})
+};
