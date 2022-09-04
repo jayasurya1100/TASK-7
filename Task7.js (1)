@@ -1,0 +1,18 @@
+// A. All the countries from the Asia continent /region using the Filter function:
+const country=new XMLHttpRequest();
+country.open("GET","https://restcountries.com/v3.1/all");
+country.send();
+
+country.responseType="json";
+country.onload=function dry( ){
+const regions=country.response;
+console.log("All the countries from the Asia continent /region:")
+regions.filter((m)=>{
+if(m.region=="Asia"){
+    
+    console.log("Name of countrys:",m.name.common,"Region:",m.region)
+
+}
+}
+)
+};
